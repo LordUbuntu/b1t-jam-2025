@@ -64,14 +64,17 @@ setGravity(2000);
 onKeyDown("space", () => {
   if (player && player.isGrounded())
     player.jump();
+  // climb when in an elevator plant
 });
 onKeyDown("up", () => {
   if (player && player.isGrounded())
     player.jump();
+  // climb when in an elevator plant
 });
 onKeyDown("w", () => {
   if (player && player.isGrounded())
     player.jump();
+  // climb when in an elevator plant
 });
 
 onKeyDown("a", () => {
@@ -95,3 +98,13 @@ onKeyDown("e", () => {
 onKeyDown("r", () => {
   // prune
 });
+
+
+
+// animations
+// when moving up and not climbing
+// when falling down and not climbing
+// when climbing
+// when walking
+// when watering
+// when pruning
