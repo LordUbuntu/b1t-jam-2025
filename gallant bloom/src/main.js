@@ -55,3 +55,43 @@ addLevel([
       },
     },
 })
+
+
+
+// movement
+setGravity(2000);
+
+onKeyDown("space", () => {
+  if (player && player.isGrounded())
+    player.jump();
+});
+onKeyDown("up", () => {
+  if (player && player.isGrounded())
+    player.jump();
+});
+onKeyDown("w", () => {
+  if (player && player.isGrounded())
+    player.jump();
+});
+
+onKeyDown("a", () => {
+  player.move(-200, 0);
+});
+onKeyDown("left", () => {
+  player.move(-200, 0);
+});
+
+onKeyDown("d", () => {
+  player.move(200, 0);
+});
+onKeyDown("right", () => {
+  player.move(200, 0);
+});
+
+onKeyDown("e", () => {
+  // water
+});
+
+onKeyDown("r", () => {
+  // prune
+});
