@@ -60,35 +60,22 @@ addLevel([
 
 // movement
 setGravity(2000);
+const SPEED = 200;
 
-onKeyDown("space", () => {
-  if (player && player.isGrounded())
+onKeyDown(["space", "up", "w"], () => {
+  // jump when on ground with a brief pause between
+  if (player && player.isGrounded()) {
     player.jump();
-  // climb when in an elevator plant
-});
-onKeyDown("up", () => {
-  if (player && player.isGrounded())
-    player.jump();
-  // climb when in an elevator plant
-});
-onKeyDown("w", () => {
-  if (player && player.isGrounded())
-    player.jump();
-  // climb when in an elevator plant
+  }
+  // climb when on elevator plant
 });
 
-onKeyDown("a", () => {
-  player.move(-200, 0);
-});
-onKeyDown("left", () => {
-  player.move(-200, 0);
+onKeyDown(["left", "a"], () => {
+  player.move(-SPEED, 0);
 });
 
-onKeyDown("d", () => {
-  player.move(200, 0);
-});
-onKeyDown("right", () => {
-  player.move(200, 0);
+onKeyDown(["right", "d"], () => {
+  player.move(SPEED, 0);
 });
 
 onKeyDown("e", () => {
