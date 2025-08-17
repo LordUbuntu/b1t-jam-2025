@@ -60,12 +60,19 @@ addLevel([
 
 // movement
 setGravity(2000);
+
 const SPEED = 200;
+const JUMP_TIMEOUT = 0.8; // delay between jumps
+
+let can_jump = true;
 
 onKeyDown(["space", "up", "w"], () => {
   // jump when on ground with a brief pause between
-  if (player && player.isGrounded()) {
+  if (player && player.isGrounded() && can_jump) {
     player.jump();
+    // wait a bit before jumping again
+    can_jump = false;
+    wait(JUMP_TIMEOUT, () => { can_jump = true; });
   }
   // climb when on elevator plant
 });
