@@ -11,8 +11,13 @@ loadSprite("bridge", "sprites/bridge_tmp.png");
 loadSprite("elevator", "sprites/elevator_tmp.png");
 loadSprite("ground", "sprites/ground_tmp.png");
 
+// player
 let player = null;
-
+onAdd("player", (object) => {
+  if (!player) {
+    player = object;
+  }
+});
 
 // levels
 addLevel([
@@ -41,18 +46,12 @@ addLevel([
         body({isStatic: true}),
         "elevator",
       ],
-      "@": () => {
-        const player_components = [
-          sprite("player"),
-          area(),
-          body(),
-          "player",
-        ];
-        onAdd("player", (object) => {
-          if (!player) player = object;
-        });
-        return player_components;
-      },
+      "@": () => [
+        sprite("player"),
+        area(),
+        body(),
+        "player",
+      ],
     },
 })
 
